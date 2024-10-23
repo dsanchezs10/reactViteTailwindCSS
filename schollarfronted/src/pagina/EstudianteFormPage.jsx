@@ -1,4 +1,4 @@
-// src/components/EstudiantesList.jsx
+
 import { useEffect, useState } from "react";
 import { getAllEstudiantes } from "../api/estudiantes.api";
 import { EstudianteCard } from "./EstudianteCard";
