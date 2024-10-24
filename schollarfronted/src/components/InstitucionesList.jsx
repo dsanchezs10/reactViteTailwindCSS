@@ -13,12 +13,16 @@ export function InstitucionesList() {
     loadInstituciones();
   }, []);
 
+  const handleDelete = async () => {
+    const res = await getAllInstituciones();
+    setInstituciones(res.data); 
+  };
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+    <div className="grid grid-cols-3 gap-3">
       {instituciones.map((institucion) => (
-        <InstitucionCard key={institucion.id} institucion={institucion} />
+        <InstitucionCard key={institucion.id} institucion={institucion} onDelete={handleDelete} />
       ))}
     </div>
   );
 }
-
